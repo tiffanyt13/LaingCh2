@@ -1,0 +1,43 @@
+
+
+import java.util.*;
+public class compound_value {
+			public static void main(String[] args) {
+			Scanner input = new Scanner(System.in);	// Create a new Scanner object.
+					final double MONTHLY_INTEREST_RATE = 0.00417;	// Initialize constant value
+
+			// Prompt the user to enter a monthly saving amount
+			System.out.print("Enter the monthly saving amount: ");
+			double savingAmount = input.nextDouble();
+		
+		
+			// Compute first month account value
+			double monthOneTotal = savingAmount * (1 + MONTHLY_INTEREST_RATE);
+			
+			// Compute second month account value
+			double monthTwoTotal = (savingAmount + monthOneTotal) * (1 + MONTHLY_INTEREST_RATE);
+			
+			// Compute third month account value
+			double monthThreeTotal = (savingAmount + monthTwoTotal) * (1 + MONTHLY_INTEREST_RATE);
+			
+			// Compute forth month account value
+			double monthFourTotal = (savingAmount + monthThreeTotal) * (1 + MONTHLY_INTEREST_RATE);
+			
+			// Compute fifth month account value
+			double monthFiveTotal = (savingAmount + monthFourTotal) * (1 + MONTHLY_INTEREST_RATE);
+			
+			// Compute sixth month account value
+			double monthSixTotal = (savingAmount + monthFiveTotal) * (1 + MONTHLY_INTEREST_RATE);
+
+			// Display result
+			 
+			System.out.printf("After the sixth month, the account value is $%.2f\n", monthSixTotal );
+		
+			input.close();
+			
+			
+		}
+
+
+		}
+	
