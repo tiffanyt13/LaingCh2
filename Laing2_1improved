@@ -1,0 +1,80 @@
+import java.util.Scanner;
+public class quippy_conversion {
+	public static void main(String[] args) {
+		double f = 0, c = 0 , k = 0, r = 0;
+		// Create a Scanner object
+		Scanner input = new Scanner(System.in);
+
+		//Prompt the user to enter \n 1 for Fahrenheit to Celsius or \n 2 for Celsius to Fahrenheit
+		System.out.print("Choose '1' for Fahrenheit, '2' for Celsius, '3' for Kelvin,  '4' for Rankine: ");
+		int ch=input.nextInt();
+
+		switch(ch) {
+
+		case 1: System.out.println("Enter Farenheit temperature:" );
+		f = input.nextDouble();
+		c = (f-32)*5/9;
+		System.out.println("Celsius temperature is = " + c);
+		k=((f-32)* 5/9 + 273.15);
+		System.out.println("Kelvin temperature is = " + k);
+		r= f + 459.67;
+		System.out.println("Rankine temperature is = " + r);
+
+		break;
+
+		case 2: System.out.println("Enter Celsius temperature:" );
+		c=input.nextDouble();
+		f=((9*c)/5)+32;
+		System.out.println("Fahrenheit temperature is = " + f);
+		k= (c + 273.15);
+		System.out.println("Kelvin temperature is = " + k);
+		r= (c +273.15)* 9/5;
+		System.out.println("Rankine temperature is = " + r);
+
+		break;
+
+		case 3: System.out.println("Enter Kelvin temperature: ");
+		k=input.nextDouble();
+		f= k * 9/5 - 459.6;
+		System.out.println("Fahrenheit temperature is = " + f);
+		c = k - 273.15;
+		System.out.println("Celsius temperature is =" + c);
+		r = k * 9/5;
+		System.out.println("Rankine temperature is =" + r);
+
+
+		break;
+
+		case 4: System.out.println("Enter Rankine temperature: ");
+		r=input.nextDouble();
+		f = r - 459.67;
+		System.out.println("Fahrenheit temperature is =" + f);
+		c = (r - 491.67)*5/9; 
+		System.out.println("Celsius temperature is =" + c);
+		k = r * 5/9;
+		System.out.println("Kelvin temperature is =" + k);
+
+		break;
+
+		default: System.out.println("You had one job! Please choose 1, 2, 3, or 4 ...");
+
+
+		}
+
+		input.close();
+		if (f <= 32 && f>=29) {
+			System.out.println("Brrr.... it's freezing!!!");
+		} 
+
+		if (c>=204 && c<=219) { 
+			System.out.println ("Your beans are roasting! ... Coffee beans that is."); }
+
+		if (r>=669 && r<=672) {
+			System.out.println ("I'm at my ABSOLUTE boiling point!");
+		}
+
+		if (k >=5600 && k<=5602) { 
+			System.out.println (" Your surface temperature is that of a burning sun...");
+		}
+	}
+}
